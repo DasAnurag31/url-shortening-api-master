@@ -36,6 +36,10 @@ select {
   font: inherit;
   border-style: none;
 }
+a {
+  text-decoration: none;
+  display: block;
+}
 /* reset END*/
 
 /* Utility classes */
@@ -76,26 +80,32 @@ select {
   align-items: center;
 }
 /* NAVIGATION BAR */
-
-.nav {
+.nav-header {
+  list-style: none;
+}
+.nav-prim {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-left: 10rem;
 }
-.logo {
-  margin-right: 3rem;
+.nav-one {
+  display: flex;
 }
-header > div > span {
-  font-weight: 700;
+.nav-one > li > a {
+  margin-right: 1rem;
   color: var(--Grayish-Violet);
+  font-weight: 700;
 }
-header > div > span:hover {
+.nav-one > li > a:hover {
   color: black;
 }
-.login {
+#login {
   color: var(--Grayish-Violet);
   background-color: white;
   margin: 1rem;
 }
-.login:hover {
+#login:hover {
   color: black;
 }
 .btn-prim {
@@ -107,7 +117,22 @@ header > div > span:hover {
 .btn-prim:hover {
   background-color: hsl(180, 66%, 49%, 0.5);
 }
+.logo {
+  position: absolute;
+  transform: translateY(0.8rem);
+  margin-left: 1rem;
+}
+.container {
+  margin: 0% auto;
+  margin: 3rem 5rem 3rem 5rem;
+}
+#toggle {
+  display: none;
+}
 /* GET STARTED SECTION */
+.main {
+  margin-right: 0%;
+}
 main > div > h1 {
   font-size: 3rem;
 }
@@ -225,16 +250,16 @@ footer > div > div {
   margin: 0.5rem;
 }
 
-footer > div > div > ul > li {
+footer > div > div > a {
   margin: 0.5rem;
   font-weight: 500;
   color: var(--Grayish-Violet);
 }
-footer > div > div > ul > li:hover {
+footer > div > div > a:hover {
   font-weight: 500;
   color: var(--Cyan);
 }
-footer > div > div > ul > li:first-child {
+footer > div > div > a:first-child {
   margin-bottom: 1.2rem;
   font-weight: 700;
   color: white;
@@ -242,4 +267,155 @@ footer > div > div > ul > li:first-child {
 .svg-icons:hover {
   fill: aqua;
 }
+@media (max-width: 745px) {
+  /* NAVIGATION BAR */
+  .nav-prim {
+    /* position: absolute; */
+    background-color: var(--Dark-Violet);
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.5rem;
+    margin: 5rem auto;
+    display: flex;
+  }
+  .nav-prim[tgl="true"]
+  {
+    display: none;
+  }
+  .nav-one {
+    padding-top: 2rem;
+    align-items: center;
+    flex-direction: column;
+  }
+  .nav-one > li > a {
+    margin-right: 1rem;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .nav-one > li > a:hover {
+    color: cyan;
+  }
+  .nav-two {
+    padding-bottom: 2rem;
+  }
+  #login {
+    display: block;
+    background-color: var(--Dark-Violet);
+    color: white;
+    font-weight: 500;
+    padding-left: 1rem;
+  }
+  #login:hover {
+    color: aqua;
+  }
+  .logo {
+    transform: translateY(-3rem);
+    /* inset: 1rem 1rem 0; */
+  }
+  #toggle {
+    display: inline;
+    position:absolute;
+    inset: 2rem 0 0 90%;
+  }
+  /* TOP SECTION */
+  .image {
+    width: 95%;
+  }
+  /* SEARCH SECTION */
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  .form > button {
+    width: 75%;
+  }
 
+  /* MOBILE BOTTOM SECTION */
+  .bottom {
+    margin: 0rem 1rem 0rem 1rem;
+  }
+  .bottom > h2 {
+    font-size: 1.2rem;
+  }
+  /* MOBILE FOOTER */
+  footer > div {
+    display: felx;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  a {
+    text-align: center;
+  }
+  .logo {
+    margin: 0%;
+  }
+}
+
+@media (max-width: 980px) {
+  /* TOP SECTION */
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  .main > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2.5rem;
+  }
+  .main > div > h1,
+  p {
+    text-align: center;
+  }
+  .main > div > button {
+    width: 50%;
+  }
+  .container {
+    margin: 0rem 1rem;
+  }
+  /* SEARCH SECTION */
+  .form > button {
+    padding: 0.5rem 1rem;
+  }
+  .search-section > form {
+    padding: 1.5rem 1rem;
+  }
+  #input {
+    width: 75%;
+  }
+  /* MIDDLE SECTION */
+  .center {
+    margin: 0rem 1rem;
+  }
+  .mid-section > div > p {
+    max-width: 90%;
+  }
+  .center > article {
+    flex-direction: column;
+    text-align: center;
+  }
+  .center > article > div {
+    width: 80%;
+  }
+  .article-logo {
+    transform: translate(-40%, -120%);
+  }
+
+  /* MOBILE BOTTOM SECTION` */
+
+  /* MOBILE FOOTER */
+  .container {
+    margin: 1rem;
+  }
+  .logo {
+    margin: 0%;
+  }
+  footer > div {
+    margin: 1rem;
+    padding: 0%;
+  }
+}
