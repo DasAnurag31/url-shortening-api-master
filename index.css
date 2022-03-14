@@ -9,7 +9,7 @@
   --Very-Dark-Violet: hsl(260, 8%, 14%);
 }
 
-/* reset */
+/* reset */ 
 * {
   box-sizing: border-box;
   padding: 0%;
@@ -168,7 +168,7 @@ main > div > p {
 }
 .mid-section > div > h1 {
   font-size: 2rem;
-  margin-top: 20%;
+  margin-top: 2.5%;
   padding-top: 3rem;
 }
 .mid-section > div > p {
@@ -267,8 +267,41 @@ footer > div > div > a:first-child {
 .svg-icons:hover {
   fill: aqua;
 }
+
+.display{
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+  margin:auto;
+  margin: 4% 5rem;
+  border-radius: 0.5rem;
+}
+.display[dip="true"]
+  {
+    display: none;
+  }
+.mid-section{
+  padding-top:2.5%;
+}
+#user-link{
+  color: var(--Grayish-Violet);
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+#short-link{
+  color: var(--Cyan);
+  font-weight: 500;
+  font-size: 1.5rem;
+}
 @media (max-width: 745px) {
   /* NAVIGATION BAR */
+  
+  .display{
+    transform: translateY(10rem);
+}
   .nav-prim {
     /* position: absolute; */
     background-color: var(--Dark-Violet);
@@ -357,6 +390,13 @@ footer > div > div > a:first-child {
 
 @media (max-width: 980px) {
   /* TOP SECTION */
+  .display[dip="true"]
+  {
+    display: none;
+  }
+.display{
+    transform: translateY(5rem);
+}
   .main {
     display: flex;
     flex-direction: column;
@@ -418,4 +458,5 @@ footer > div > div > a:first-child {
     margin: 1rem;
     padding: 0%;
   }
+  
 }

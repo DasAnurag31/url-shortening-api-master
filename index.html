@@ -488,23 +488,32 @@
         </svg>
       </div>
     </main>
+
     <!-- SEARCH SECTION -->
     <section class="container search-section">
-      <form action="" class="flex form">
-        <label for="imput"></label>
+      <form action="#" class="flex form" onsubmit="click(); return false">
+        <label for="input"></label>
         <input
           required
           id="input"
           type="url"
           placeholder="    Shorten a link here..."
         />
-        <button class="btn-prim btn-sec">Shorten It!</button>
+        <button id="shorten" class="btn-prim btn-sec">Shorten It!</button>
       </form>
     </section>
-
+   
     <!-- MIDDLE SECTION -->
     <section class="mid-section">
+      <section >
+        <div dip="false" class="display container">
+          <span id="user-link">Your Link Here</span>
+          <span id="short-link">New Link Here</span>
+          <button id="copy" class="copy  btn-prim">copy</button>
+        </div>
+      </section>
       <div class="container center">
+        
         <h1>Advanced Statistics</h1>
         <p>
           Track how your links are performing across the web with our advanced
